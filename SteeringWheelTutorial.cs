@@ -12,10 +12,6 @@ public class SteeringWheelTutorial : MonoBehaviour, IPointerDownHandler, IDragHa
 	[SerializeField]
 	private float releaseSpeed = 350f;
 
-	[Header("Steering Wheel Rect Transform")]
-	[SerializeField]
-	private RectTransform wheel;
-
 	public static float steeringInput;
 
 	private void ApplyInput()
@@ -25,8 +21,15 @@ public class SteeringWheelTutorial : MonoBehaviour, IPointerDownHandler, IDragHa
 	}
 
 
-	//You don't need to modify anything under this comment
+    //You don't need to modify anything under this comment
 
+    
+	private RectTransform wheel;
+
+	private void Start()
+	{
+		wheel = GetComponent<RectTransform>();
+	}
 
 	#region Events
 
